@@ -49,9 +49,6 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableLinkedList addAll(int index, Object[] c) {
-        if (indexOf(index) == -1) {
-            throw new IndexOutOfBoundsException();
-        }
         Object[] newArrayList = new Object[size + c.length];
         int i = 0;
         int j = 0;
@@ -62,7 +59,7 @@ public class ImmutableLinkedList implements ImmutableList {
             cur = cur.next;
         }
         while (j < c.length) {
-            newArrayList[i+j] = newArrayList[j];
+            newArrayList[i+j] = c[j];
             j++;
         }
         while (cur != null) {
@@ -76,9 +73,6 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        if (indexOf(index) == -1) {
-            throw new IndexOutOfBoundsException();
-        }
         Node cur = head;
         int i = 0;
         while (i < index) {
@@ -93,18 +87,16 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public ImmutableLinkedList remove(int index) {
-        if (indexOf(index) == -1) {
-            throw new IndexOutOfBoundsException();
-        }
         Object[] newArrayList = new Object[size()-1];
         Node cur = head;
         int i = 0;
+        int j = 0;
         while (cur != null)
         {
             if (i != index)
             {
-                newArrayList[i] = cur.data;
-                i++;
+                newArrayList[j] = cur.data;
+                j++;
             }
             cur = cur.next;
             i++;

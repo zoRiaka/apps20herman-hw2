@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class ImmutableArrayListTest {
     private ImmutableList list1;
-    private ImmutableList list2 = new ImmutableArrayList();
+    private ImmutableList list2;
 
     @Before
     public void before() {
