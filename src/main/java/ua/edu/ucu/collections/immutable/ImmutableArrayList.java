@@ -33,8 +33,8 @@ public class ImmutableArrayList implements ImmutableList {
         Object[] newArrayList = new Object[size + c.length];
         System.arraycopy(arrayList, 0, newArrayList, 0, index);
         System.arraycopy(c, 0, newArrayList, index, c.length);
-        System.arraycopy(arrayList, index, newArrayList, index +
-                         c.length, size - index);
+        System.arraycopy(arrayList, index, newArrayList, index
+                         + c.length, size - index);
         return new ImmutableArrayList(newArrayList);
     }
 
