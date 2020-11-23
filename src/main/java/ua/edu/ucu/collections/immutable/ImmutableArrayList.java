@@ -33,7 +33,8 @@ public class ImmutableArrayList implements ImmutableList {
         Object[] newArrayList = new Object[size + c.length];
         System.arraycopy(arrayList, 0, newArrayList, 0, index);
         System.arraycopy(c, 0, newArrayList, index, c.length);
-        System.arraycopy(arrayList, index, newArrayList, index + c.length, size - index);
+        System.arraycopy(arrayList, index, newArrayList, index
+                         + c.length, size - index);
         return new ImmutableArrayList(newArrayList);
     }
 
@@ -47,7 +48,8 @@ public class ImmutableArrayList implements ImmutableList {
     public ImmutableArrayList remove(int index) {
         Object[] newArrayList = new Object[size() - 1];
         System.arraycopy(arrayList, 0, newArrayList, 0, index);
-        System.arraycopy(arrayList, index+1, newArrayList, index, size() - index - 1);
+        System.arraycopy(arrayList, index+1, newArrayList, index, size()
+                         - index - 1);
         return new ImmutableArrayList(newArrayList);
     }
 
@@ -62,7 +64,7 @@ public class ImmutableArrayList implements ImmutableList {
     @Override
     public int indexOf(Object e) {
         int size = size();
-        for (int i = 0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (arrayList[i] == e) {
                 return i;
             }
@@ -82,7 +84,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public boolean isEmpty() {
-        return size()==0;
+        return size() == 0;
     }
 
     @Override
