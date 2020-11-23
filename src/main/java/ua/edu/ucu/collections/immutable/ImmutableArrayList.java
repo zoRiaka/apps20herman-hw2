@@ -64,7 +64,7 @@ public class ImmutableArrayList implements ImmutableList {
     @Override
     public int indexOf(Object e) {
         int size = size();
-        for (int i = 0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
             if (arrayList[i] == e) {
                 return i;
             }
@@ -84,7 +84,7 @@ public class ImmutableArrayList implements ImmutableList {
 
     @Override
     public boolean isEmpty() {
-        return size()==0;
+        return size() == 0;
     }
 
     @Override
