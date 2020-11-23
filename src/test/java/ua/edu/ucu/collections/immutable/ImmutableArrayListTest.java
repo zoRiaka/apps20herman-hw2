@@ -10,7 +10,7 @@ public class ImmutableArrayListTest {
 
     @Before
     public void before() {
-        list1 = new ImmutableArrayList(new Object[] {3, 8, 2, 4, 4, 6, 1}); // dwseafrgfthyhjgfdnhhnnggfgdgffgfgfggffgfggfgffgfgfg
+        list1 = new ImmutableArrayList(new Object[] {3, 8, 2, 4, 4, 6, 1}); 
         list2 = new ImmutableArrayList();
     }
     @Test
