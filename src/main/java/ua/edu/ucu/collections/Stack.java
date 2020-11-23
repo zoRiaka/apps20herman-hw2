@@ -9,12 +9,12 @@ public class Stack {
     }
 
     public void push(Object el) {
-        stack.addFirst(el);
+        stack = stack.addFirst(el);
     }
 
     public Object pop() {
         Object el = stack.getFirst();
-        stack.removeFirst();
+        stack = stack.removeFirst();
         return el;
     }
 
